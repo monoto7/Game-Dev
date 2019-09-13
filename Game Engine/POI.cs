@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Engine_Player
 {
+    //POI class, also subject to change to be more robust
     [Serializable]
     class POI
     {

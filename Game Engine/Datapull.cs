@@ -8,7 +8,7 @@ namespace Game_Engine_Player
 {
    public class Datapull
     {
-
+        //Ideally all content pulling would've been handled here, but for a lot of things its almost pointless.
         public List<List<string>> GetDescriptions()
         {
             List<List<string>> AllDescriptions = new List<List<string>>();

@@ -112,6 +112,12 @@ namespace Game_Engine_Player
             return new KeyValuePair<int, string>(-1, "Err");
             //this should seriously never show up, otherwise the event doesn't have an acting default state, or the character may not have the stats in question to check them? NOT FULLY TESTED
         }
+
+
+
+
+
+
         //int parameter = 0;
         //int curEvent = 0;
         //public Dictionary<string, int> TestCase(int Routing, Character MainChar)
@@ -180,6 +186,6 @@ namespace Game_Engine_Player
         //    }
         //    return Variables;
         //}
-        //old method for reference, might decide 'fuck this' and go back to using it, since its so much fucking nicer(for a small amount of events, this would become unmanageable after a certain point)
+        //old method for reference. Will not be used.
     }
 }

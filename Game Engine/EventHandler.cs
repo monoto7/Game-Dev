@@ -8,6 +8,9 @@ namespace Game_Engine_Player
 {
     static class EventHandler
     {
+        //Old code, kept for reference for the original event handler
+        //May not work with current iteration, has not been tested in a while due to being deprecated.
+        //Still, it gives a rough idea for how to manually create events, that said this was just to test whether the event creation worked at all, and I would heavily recommend using the event creator.
         public static Event EventGet(string ChosenMap)
         {
             Event EventCreate;

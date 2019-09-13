@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Engine_Player
 {
+    //Code for the map object, subject to change and while likely functional, I haven't fully decided on how the maps will work.
     [Serializable]
     class Map
     {

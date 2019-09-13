@@ -12,7 +12,7 @@ namespace Game_Engine_Player
 {
     public partial class MainWindow : Form
     {
-
+        //The main display, all content shows up on this form, though with the future potential of minigames, they may end up showing on other forms depending on implementation
         int CurEvent;
         Datapull Data;
         Character MainChar;
@@ -35,6 +35,8 @@ namespace Game_Engine_Player
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //loads the main menu and the button images used throughout the software into the memory. Those images are not applied in the form editor to allow for them to be changed.
+            //Ideally there would be the ability to create buttons, and while an implementation would be possible, it's not a priority.
             ButtonFourBy = new Bitmap(@"Images\UI\elements\button 4x1.png");
             ButtonFourByHover = new Bitmap(@"Images\UI\elements\button 4x1_ho.png");
             ButtonGeneral = new Bitmap(@"Images\UI\elements\button.png");
@@ -88,6 +90,7 @@ namespace Game_Engine_Player
 
         private void btnWide_MouseEnter(object sender, EventArgs e)
         {
+            //Code handles appearance, there's a few checks here and there but they're mostly all easy to understand
             Control CurButton = sender as Control;
             RadioButton CurRdBtn = sender as RadioButton;
             if (CurRdBtn != null && CurRdBtn.Checked)
@@ -128,6 +131,7 @@ namespace Game_Engine_Player
 
         private void btnMainMenuStartGame_Click(object sender, EventArgs e)
         {
+            //Toggles the top bar
             ToggleTopBar(true);
             
             pnlMainMenu.Hide();
@@ -140,6 +144,8 @@ namespace Game_Engine_Player
         }
         private void ToggleTopBar(Boolean Toggle)
         {
+            //The code to toggle the top bar is below, to speed loading times of initial launch, the images for the top bar only load upon this showing
+            //If its better for performance the images will also unload. There are a few optimisations to be made here
             btnTopclose.BackgroundImage = ButtonGeneral;
             btnTopminimise.BackgroundImage = ButtonGeneral;
             btnTopsave.BackgroundImage = ButtonGeneral;
@@ -152,7 +158,7 @@ namespace Game_Engine_Player
 
         private void pnlCharCreate_VisibleChanged(object sender, EventArgs e)
         {
-            
+            //Loads the character creation panel, like the top bar, this is done to save loading times. Though looking over it right now it seems pointless. Subject to editing obviously
             Panel Curpanel = sender as Panel;
             Curpanel.BackgroundImage = BackgroundGeneral;
             //panelchange(Curpanel.Controls);
@@ -174,6 +180,8 @@ namespace Game_Engine_Player
         }
         private void panelchange(Control.ControlCollection controls)
         {
+            //Old code that automatically sets the images for the buttons and things. Currently unused due to being slow, though it's left in for easy expansion in terms of foreign modules.
+            //This assumes that those modules would be hosted on this form.
             foreach(Control c in controls)
             {
                 if (c is RadioButton)
@@ -218,14 +226,16 @@ namespace Game_Engine_Player
         private void pnlInventory_VisibleChanged(object sender, EventArgs e)
         {
             pnlInventory.BackgroundImage = BackgroundGeneral;
-            pnlInventoryViewInventory.BackgroundImage = new Bitmap(@"Images\UI\elements\panel background inventory.png"); }
-                private void MainWindow_SizeChanged(object sender, EventArgs e)
+            pnlInventoryViewInventory.BackgroundImage = new Bitmap(@"Images\UI\elements\panel background inventory.png");
+        }
+        private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
 
         }
 
         private void btnMainMenuLoadGame_Click(object sender, EventArgs e)
         {
+            //load and options could theoretically be merged into the same menu, and would be a good show of the dynamic button creation, but it's likely pointless functionality wise
             pnlLoad.Visible =  !pnlLoad.Visible;
             pnlOptions.Visible = false;
         }
@@ -238,6 +248,7 @@ namespace Game_Engine_Player
 
         private void BtnWideSelected(object sender, EventArgs e)
         {
+            //Logic for changing any wide button to have the selected image.
             RadioButton CurButton = sender as RadioButton;
             if(CurButton.Checked)
             {
@@ -306,6 +317,7 @@ namespace Game_Engine_Player
         //}
         private void EventStart(Event CurEvent)
         {
+            //This gets the start state for the next event to be run
             KeyValuePair<int, string> StartState = CurEvent.GetStartState(MainChar);
             // rtxbxEvent.Text = StartState.Value;
             CurrentEvent = CurEvent;
@@ -313,15 +325,18 @@ namespace Game_Engine_Player
         }
         private void EventButtonClick(object sender, EventArgs e)
         {
+            //This code occurs when a button is clicked during an event
             Button button = sender as Button;
+            //The button name is used to remember which ECH it is, though this might be inelegant.
             EventConvoHandler ECHPress = EventConvo[button.Name];
             KeyValuePair<int, string> SendTextState = ECHPress.Activate(MainChar);
-           // rtxbxEvent.Text = SendTextState.Value;
+            //rtxbxEvent.Text = SendTextState.Value;
+            //Clears the 'event convo', Event convo only stores the currently displayed buttons/ECHs.
             EventConvo.Clear();
             EventRefresh(SendTextState.Key);
         }
 
-
+        //Code below is Currently unused map code. It demonstrates dynamic button generation for the points of interest.
         //private void MapButtonClick(object sender, EventArgs e)
         //{
         //    Button button = sender as Button;
@@ -358,6 +373,8 @@ namespace Game_Engine_Player
         //}
         private void EventRefresh(int SendState)
         {
+            //Event Refresh is probably the most interesting part of this file, as it handles dynamic button creation with eventhandlers.
+            //To Quickly summarise, it creates the buttons based on the ECH's with Accept States equal to the current Send State and then displays them on the screen.
             EventConvo.Clear();
             int ButtonCount = 0;
             int panelheight = pnlEventViewEventButtons.Size.Height / 2;
@@ -370,6 +387,7 @@ namespace Game_Engine_Player
                 {
                     if (ECH.Acceptance_States.Contains(SendState))
                     {
+                        //Adds the ECH's with accept states equal to the send state to the EventConvo
                         EventConvo.Add(ECH.ButtonText, ECH);
                     }
                 }
@@ -396,7 +414,8 @@ namespace Game_Engine_Player
             }
             else if (AcceptStateCheck.Key == "Map")
             {
-
+                //code here will show a map. In the future this code will not be manual but instead pull from a list of included 'modules' that would include both the map and events.
+                //By doing this it would allow for other modules to be supported after event selection. For example the suggested idea of minigames.
             }
         }
 

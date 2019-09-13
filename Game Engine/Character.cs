@@ -8,6 +8,8 @@ namespace Game_Engine_Player
 {
    public class Character
     {
+        //Code for characters, including the code for stat checks at the bottom.
+        //This is designed so that all characters work like the main character. Which is an important feature of the game the engine is being developed from. Likely to be kept since while the use case is low for most games, there's a lot of utility in this, as it allows for dummy object creation.
         string Name;
         int age;
         Dictionary<string, int> bodyparts;

@@ -9,7 +9,8 @@ namespace Game_Engine_Player
 {
     static class MapHandler
     {
-     
+     //Similar to EventHnandler.cs, just for maps
+     //I would not recommend using this.
         public static Map MapGet(string ChosenMap)
         {
             Map MapCreate;

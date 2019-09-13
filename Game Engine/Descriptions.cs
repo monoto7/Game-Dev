@@ -8,6 +8,7 @@ namespace Game_Engine_Player
 {
    public class Descriptions
     {
+        //Code for assigning descriptions to body parts, currently in development.
         Dictionary<string, List<string>> AllDesc;
         public Descriptions(Datapull Data)
         {
