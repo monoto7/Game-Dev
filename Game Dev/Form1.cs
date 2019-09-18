@@ -16,7 +16,7 @@ using System.Xml;
 using System.Xml.Serialization;
 
 using System.IO;
-
+//Below is the source code for the event creation software.
 namespace Game_Dev
 {
     public partial class Form1 : Form
@@ -48,6 +48,7 @@ namespace Game_Dev
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Defining objects for use. After the UI revamp most of these if not all will be moved to a proper function to make this cleaner.
             StartList = new List<int>();
             StartText = new Dictionary<int, string>();
             StartDictionary = new Dictionary<int, Dictionary<string, KeyValuePair<string, KeyValuePair<int, int>>>>();
@@ -84,8 +85,9 @@ namespace Game_Dev
 
         private void btnAddSendState_Click(object sender, EventArgs e)
         {
-            //try
-            //
+            //Lazy try catches are used throughout, not the best practice for bugfixing, nor good for responsive feedback to users, but this is on the backburner as an issue.
+            try { 
+            
                 if (!StartChck.Checked)
                 {
                     if (ComplexChck.Checked)
@@ -110,14 +112,15 @@ namespace Game_Dev
                 StartText.Add(Convert.ToInt32(txtbxSendState.Text), rtxbxSendText.Text);
                     RefreshState();
                 }
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("invalid input");
-            //}
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("invalid input");
+            }
         }
         private void btnCreateEch_Click(object sender, EventArgs e)
         {
+            //Theoretically this allows for duplicate ECH's to be added, since it doesn't update old ECH's, but this has potential uses. Classic 'feature not a bug' arguement :)
             try
             {
                 EventConvoHandler ECHAdd;
@@ -140,6 +143,7 @@ namespace Game_Dev
         }
         private void RefreshNewEch()
         {
+            //This is meant to clean up the UI whenever a new ECH is created. Though I believe there are still a few things missing.
             EchAStateList.Clear();
             chckSend_StateDictionary.Clear();
             RefreshState();
@@ -157,6 +161,8 @@ namespace Game_Dev
         }
         private void RefreshECH()
         {
+            //The refresh functions are mainly used for scalable UI and data handling. The majority of them are quite simple, but make changes to the underlying logic behind ECH's simple.
+            //The below refreshes the list box of ECH's.
             lstbxECH.Items.Clear();
             foreach (EventConvoHandler ECH in ECHList)
             {
@@ -175,6 +181,7 @@ namespace Game_Dev
         }
         private void RefreshState()
         {
+            //refreshes the 'send states' of an associated ECH
             lstbxState.Items.Clear();
             if (!StartChck.Checked)
             {
@@ -221,6 +228,7 @@ namespace Game_Dev
         }
         private void RefreshFState()
         {
+            //handles refreshing the finish state area
             lstbxFState.Items.Clear();
             FinishList.Clear();
             foreach (KeyValuePair<int, KeyValuePair<string, string>> Fstate in FinishDictionary)
@@ -232,7 +240,7 @@ namespace Game_Dev
         }
         private void RefreshLState()
         {
-
+            //handles refreshing the alter state area
             lstbxLState.Items.Clear();
             AlterList.Clear();
             foreach (KeyValuePair<int, KeyValuePair<int, KeyValuePair<string, bool>>> LState in AlterDictionary)
@@ -244,6 +252,7 @@ namespace Game_Dev
         }
         private void RefreshAState()
         {
+            //handles refreshing the accept state area
             lstbxAState.Items.Clear();
             foreach (int AState in EchAStateList)
             {
@@ -253,6 +262,7 @@ namespace Game_Dev
         }
         private void RefreshIState()
         {
+            //handles refreshing the image state area.
             lstbxIState.Items.Clear();
             ImageList.Clear();
             foreach (KeyValuePair<int, string> ImageState in ImageDictionary)
@@ -264,6 +274,7 @@ namespace Game_Dev
         }
         private void RefreshStateChecks()
         {
+            //Handles the refreshing of the stat check area of the software.
             StateCheckList.Clear();
             lstbxStateChecks.Items.Clear();
             if (StartChck.Checked)
@@ -345,6 +356,7 @@ namespace Game_Dev
 
         private void btnDeleteAState_Click(object sender, EventArgs e)
         {
+  
             if (lstbxAState.SelectedIndex != -1)
             {
                 EchAStateList.RemoveAt(lstbxAState.SelectedIndex);
@@ -354,10 +366,13 @@ namespace Game_Dev
 
         private void cmbxCheckCompare_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Functionalised for scalability here, namely to follow the format of the other checkboxes.
             cmbxCheckCompareChange();
         }
         private void cmbxCheckCompareChange()
         {
+            //Hard index referencing isn't ideal for future change, but string comparisons aren't ideal either.
+            //I'll probably have to update this when I revamp the UI
             if (cmbxCheckCompare.SelectedIndex == 3)
             {
                 txtbxLowerStat.Show();
@@ -498,6 +513,7 @@ namespace Game_Dev
 
         private void lstbxECH_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //The below code was at one point extremely long winded up until the inclusion of the 'refresh' functions.
             if (lstbxECH.SelectedIndex != -1)
             {
                 ComplexChck.Checked = ECHList[lstbxECH.SelectedIndex].Complex;
@@ -519,6 +535,7 @@ namespace Game_Dev
 
         private void btnAddFState_Click(object sender, EventArgs e)
         {
+            //Due to the relative lack of information, addition is easy, as there aren't a great deal of things to consider.
             try
             {
                 FinishDictionary.Add(Convert.ToInt32(txtbxFState.Text), new KeyValuePair<string, string>(cmbxFstateType.Text, txtbxFStateDestination.Text));
@@ -532,6 +549,7 @@ namespace Game_Dev
 
         private void btnDeleteFState_Click(object sender, EventArgs e)
         {
+            //due to F states only having one type, deletion is extremely simple.
             if (lstbxFState.SelectedIndex != -1)
             {
                 FinishDictionary.Remove(FinishList[lstbxFState.SelectedIndex]);
@@ -541,6 +559,7 @@ namespace Game_Dev
 
         private void StartChck_CheckedChanged(object sender, EventArgs e)
         {
+            //Due to the nature of the start state being complex, but not having accept states, the interface logic is slightly more involved.
             gbxAcceptState.Visible = !gbxAcceptState.Visible;
             if (StartChck.Checked)
             {
@@ -564,6 +583,7 @@ namespace Game_Dev
 
         private void btnAddLState_Click(object sender, EventArgs e)
         {
+            //Adds alter states to the alter dictionary, not called A state since accept states have that and are more relevant from a coding perspective
             try
             {
 
@@ -620,7 +640,7 @@ namespace Game_Dev
                 {
                     using (var writer = new XmlTextWriter(sw))
                     {
-                        writer.Formatting = Formatting.Indented; // indent the Xml so it's human readable
+                        writer.Formatting = Formatting.Indented;
                         serializer.WriteObject(writer, subEvent);
                         writer.Flush();
                         xmlString = sw.ToString();
