@@ -35,6 +35,7 @@ namespace Game_Engine_Player
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Data = new Datapull();
             //loads the main menu and the button images used throughout the software into the memory. Those images are not applied in the form editor to allow for them to be changed.
             //Ideally there would be the ability to create buttons, and while an implementation would be possible, it's not a priority.
             ButtonFourBy = new Bitmap(@"Images\UI\elements\button 4x1.png");
@@ -48,6 +49,7 @@ namespace Game_Engine_Player
             btnMainMenuOptions.BackgroundImage = ButtonFourBy;
             btnMainMenuStartGame.BackgroundImage = ButtonFourBy;
             btnMainMenuLoadGame.BackgroundImage = ButtonFourBy;
+            EventConvo = new Dictionary<string, EventConvoHandler>();
         }
 
         //private void pictureBox1_Click(object sender, EventArgs e)
@@ -281,9 +283,15 @@ namespace Game_Engine_Player
 
         private void btnCharCreateFinish_Click(object sender, EventArgs e)
         {
+            MainChar = new Character("Peter");
             pnlEventView.Visible = true;
             pnlCharCreate.Visible = false;
             pnlCharViewFull.Visible = false;
+            MainChar.AddPart("Strength", 10);
+            MainChar.AddPart("Charisma", 10);
+            MainChar.AddPart("Intelligence", 10);
+            EventStart(Data.GetEvent("Start"));
+            
         }
 
         private void btnEventViewInventory_Click(object sender, EventArgs e)
@@ -330,7 +338,6 @@ namespace Game_Engine_Player
             //The button name is used to remember which ECH it is, though this might be inelegant.
             EventConvoHandler ECHPress = EventConvo[button.Name];
             KeyValuePair<int, string> SendTextState = ECHPress.Activate(MainChar);
-            //rtxbxEvent.Text = SendTextState.Value;
             //Clears the 'event convo', Event convo only stores the currently displayed buttons/ECHs.
             EventConvo.Clear();
             EventRefresh(SendTextState.Key);
@@ -375,11 +382,12 @@ namespace Game_Engine_Player
         {
             //Event Refresh is probably the most interesting part of this file, as it handles dynamic button creation with eventhandlers.
             //To Quickly summarise, it creates the buttons based on the ECH's with Accept States equal to the current Send State and then displays them on the screen.
+         
             EventConvo.Clear();
             int ButtonCount = 0;
-            int panelheight = pnlEventViewEventButtons.Size.Height / 2;
-            int width = Convert.ToInt32(pnlEventViewEventButtons.Size.Width * 0.9);
-            int placementX = Convert.ToInt32(pnlEventViewEventButtons.Size.Width - (pnlEventViewEventButtons.Size.Width * 0.7));
+            int panelheight = pnlEventViewEventButtons.Size.Height;
+            int width = Convert.ToInt32(pnlEventViewEventButtons.Size.Width * 0.8);
+            int placementX = Convert.ToInt32(pnlEventViewEventButtons.Size.Width - (pnlEventViewEventButtons.Size.Width * 0.9));
             KeyValuePair<string, string> AcceptStateCheck = CurrentEvent.StateCheck(SendState, ref MainChar);
             if (AcceptStateCheck.Key == null)
             {
@@ -399,7 +407,7 @@ namespace Game_Engine_Player
                         Name = CurECH.ButtonText,
                         Text = CurECH.ButtonText,
                         Size = new Size(width, height),
-                        Location = new Point(placementX, panelheight + height * ButtonCount)
+                        Location = new Point(placementX, height * ButtonCount)
 
                     };
                     CurButton.FlatStyle = FlatStyle.Flat;
@@ -410,7 +418,7 @@ namespace Game_Engine_Player
             }
             else if (AcceptStateCheck.Key == "Event")
             {
-                EventStart(EventHandler.EventGet(MapPOI[AcceptStateCheck.Key].Destination));
+                EventStart(Data.GetEvent(AcceptStateCheck.Key));
             }
             else if (AcceptStateCheck.Key == "Map")
             {

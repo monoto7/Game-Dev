@@ -1037,9 +1037,9 @@
             this.Controls.Add(this.btnTopoptions);
             this.Controls.Add(this.btnTopminimise);
             this.Controls.Add(this.btnTopclose);
+            this.Controls.Add(this.pnlEventView);
             this.Controls.Add(this.pnlCharCreate);
             this.Controls.Add(this.pnlMainMenu);
-            this.Controls.Add(this.pnlEventView);
             this.Controls.Add(this.pnlCharViewFull);
             this.Controls.Add(this.pnlInventory);
             this.DoubleBuffered = true;

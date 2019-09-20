@@ -662,9 +662,9 @@ namespace Game_Dev
 
             using (var sw = new StreamReader(txtbxLoadFileName.Text + ".xml"))
             {
-                using (var writer = new XmlTextReader(sw))
+                using (var reader = new XmlTextReader(sw))
                 {
-                    var subEvent = serializer.ReadObject(writer) as Event;
+                    var subEvent = serializer.ReadObject(reader) as Event;
                     ECHList = subEvent.Conversation;
                     FinishDictionary = subEvent.AcceptStates;
                     AlterDictionary = subEvent.AlterStates;
