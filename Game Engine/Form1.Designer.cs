@@ -50,25 +50,25 @@
             this.pnlInventoryViewInventory = new System.Windows.Forms.Panel();
             this.pnlCharCreate = new System.Windows.Forms.Panel();
             this.btnCharCreateFinish = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbxCharCreateCharName = new System.Windows.Forms.TextBox();
             this.FLPnlCharCreate = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlCharCreateAss = new System.Windows.Forms.Panel();
-            this.rdbtnCharCreateAss3 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreateAss1 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreateAss4 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreateAss2 = new System.Windows.Forms.RadioButton();
+            this.Strength = new System.Windows.Forms.Panel();
+            this.rdbtnCharCreateStr3 = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateStr = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateStr4 = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateStr2 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlCharCreateBreasts = new System.Windows.Forms.Panel();
-            this.rdbtnCharCreateBreasts3 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreateBreasts1 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreateBreasts4 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreateBreasts2 = new System.Windows.Forms.RadioButton();
+            this.Agility = new System.Windows.Forms.Panel();
+            this.rdbtnCharCreateAgi3 = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateAgi1 = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateAgi4 = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateAgi2 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlCharCreatePenis = new System.Windows.Forms.Panel();
-            this.rdbtnCharCreatePenis3 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreatePenis1 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreatePenis4 = new System.Windows.Forms.RadioButton();
-            this.rdbtnCharCreatePenis2 = new System.Windows.Forms.RadioButton();
+            this.Charisma = new System.Windows.Forms.Panel();
+            this.rdbtnCharCreateCha3 = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateCha1 = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateCha4 = new System.Windows.Forms.RadioButton();
+            this.rdbtnCharCreateCha2 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlCharViewFull = new System.Windows.Forms.Panel();
             this.picbxCharViewFull = new System.Windows.Forms.PictureBox();
@@ -86,15 +86,17 @@
             this.pnlEventViewTextSmall = new System.Windows.Forms.Panel();
             this.btnEventViewHideSmall = new System.Windows.Forms.Button();
             this.picbxEventViewClock = new System.Windows.Forms.PictureBox();
+            this.lblEventViewLargeText = new System.Windows.Forms.Label();
+            this.lblEventViewSmallText = new System.Windows.Forms.Label();
             this.pnlMainMenu.SuspendLayout();
             this.pnlInventory.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pnlCharCreate.SuspendLayout();
             this.FLPnlCharCreate.SuspendLayout();
-            this.pnlCharCreateAss.SuspendLayout();
-            this.pnlCharCreateBreasts.SuspendLayout();
-            this.pnlCharCreatePenis.SuspendLayout();
+            this.Strength.SuspendLayout();
+            this.Agility.SuspendLayout();
+            this.Charisma.SuspendLayout();
             this.pnlCharViewFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbxCharViewFull)).BeginInit();
             this.pnlEventView.SuspendLayout();
@@ -431,7 +433,7 @@
             // pnlCharCreate
             // 
             this.pnlCharCreate.Controls.Add(this.btnCharCreateFinish);
-            this.pnlCharCreate.Controls.Add(this.textBox1);
+            this.pnlCharCreate.Controls.Add(this.txtbxCharCreateCharName);
             this.pnlCharCreate.Controls.Add(this.FLPnlCharCreate);
             this.pnlCharCreate.Location = new System.Drawing.Point(0, 0);
             this.pnlCharCreate.Name = "pnlCharCreate";
@@ -459,24 +461,24 @@
             this.btnCharCreateFinish.MouseEnter += new System.EventHandler(this.btnFourBy_MouseEnter);
             this.btnCharCreateFinish.MouseLeave += new System.EventHandler(this.btnFourBy_MouseLeave);
             // 
-            // textBox1
+            // txtbxCharCreateCharName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox1.Location = new System.Drawing.Point(642, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(301, 49);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "Character Name";
+            this.txtbxCharCreateCharName.BackColor = System.Drawing.Color.White;
+            this.txtbxCharCreateCharName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxCharCreateCharName.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtbxCharCreateCharName.Location = new System.Drawing.Point(642, 16);
+            this.txtbxCharCreateCharName.Name = "txtbxCharCreateCharName";
+            this.txtbxCharCreateCharName.Size = new System.Drawing.Size(301, 49);
+            this.txtbxCharCreateCharName.TabIndex = 13;
+            this.txtbxCharCreateCharName.Text = "Character Name";
             // 
             // FLPnlCharCreate
             // 
             this.FLPnlCharCreate.AutoScroll = true;
             this.FLPnlCharCreate.BackColor = System.Drawing.Color.Transparent;
-            this.FLPnlCharCreate.Controls.Add(this.pnlCharCreateAss);
-            this.FLPnlCharCreate.Controls.Add(this.pnlCharCreateBreasts);
-            this.FLPnlCharCreate.Controls.Add(this.pnlCharCreatePenis);
+            this.FLPnlCharCreate.Controls.Add(this.Strength);
+            this.FLPnlCharCreate.Controls.Add(this.Agility);
+            this.FLPnlCharCreate.Controls.Add(this.Charisma);
             this.FLPnlCharCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FLPnlCharCreate.ForeColor = System.Drawing.SystemColors.GrayText;
             this.FLPnlCharCreate.Location = new System.Drawing.Point(649, 70);
@@ -484,106 +486,106 @@
             this.FLPnlCharCreate.Size = new System.Drawing.Size(500, 458);
             this.FLPnlCharCreate.TabIndex = 11;
             // 
-            // pnlCharCreateAss
+            // Strength
             // 
-            this.pnlCharCreateAss.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlCharCreateAss.Controls.Add(this.rdbtnCharCreateAss3);
-            this.pnlCharCreateAss.Controls.Add(this.rdbtnCharCreateAss1);
-            this.pnlCharCreateAss.Controls.Add(this.rdbtnCharCreateAss4);
-            this.pnlCharCreateAss.Controls.Add(this.rdbtnCharCreateAss2);
-            this.pnlCharCreateAss.Controls.Add(this.label1);
-            this.pnlCharCreateAss.Location = new System.Drawing.Point(3, 3);
-            this.pnlCharCreateAss.Name = "pnlCharCreateAss";
-            this.pnlCharCreateAss.Size = new System.Drawing.Size(470, 103);
-            this.pnlCharCreateAss.TabIndex = 17;
+            this.Strength.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Strength.Controls.Add(this.rdbtnCharCreateStr3);
+            this.Strength.Controls.Add(this.rdbtnCharCreateStr);
+            this.Strength.Controls.Add(this.rdbtnCharCreateStr4);
+            this.Strength.Controls.Add(this.rdbtnCharCreateStr2);
+            this.Strength.Controls.Add(this.label1);
+            this.Strength.Location = new System.Drawing.Point(3, 3);
+            this.Strength.Name = "Strength";
+            this.Strength.Size = new System.Drawing.Size(470, 103);
+            this.Strength.TabIndex = 17;
             // 
-            // rdbtnCharCreateAss3
+            // rdbtnCharCreateStr3
             // 
-            this.rdbtnCharCreateAss3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreateAss3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreateAss3.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreateAss3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreateAss3.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreateAss3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateAss3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateAss3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreateAss3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreateAss3.Location = new System.Drawing.Point(6, 64);
-            this.rdbtnCharCreateAss3.Name = "rdbtnCharCreateAss3";
-            this.rdbtnCharCreateAss3.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreateAss3.TabIndex = 9;
-            this.rdbtnCharCreateAss3.TabStop = true;
-            this.rdbtnCharCreateAss3.Text = "normal";
-            this.rdbtnCharCreateAss3.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreateAss3.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreateAss3.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreateAss3.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateStr3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateStr3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateStr3.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateStr3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateStr3.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateStr3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateStr3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateStr3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateStr3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateStr3.Location = new System.Drawing.Point(6, 64);
+            this.rdbtnCharCreateStr3.Name = "rdbtnCharCreateStr3";
+            this.rdbtnCharCreateStr3.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateStr3.TabIndex = 9;
+            this.rdbtnCharCreateStr3.TabStop = true;
+            this.rdbtnCharCreateStr3.Text = "normal";
+            this.rdbtnCharCreateStr3.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateStr3.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateStr3.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateStr3.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreateAss1
+            // rdbtnCharCreateStr
             // 
-            this.rdbtnCharCreateAss1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreateAss1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreateAss1.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreateAss1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreateAss1.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreateAss1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateAss1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateAss1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreateAss1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreateAss1.Location = new System.Drawing.Point(6, 28);
-            this.rdbtnCharCreateAss1.Name = "rdbtnCharCreateAss1";
-            this.rdbtnCharCreateAss1.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreateAss1.TabIndex = 8;
-            this.rdbtnCharCreateAss1.TabStop = true;
-            this.rdbtnCharCreateAss1.Text = "normal";
-            this.rdbtnCharCreateAss1.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreateAss1.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreateAss1.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreateAss1.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateStr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateStr.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateStr.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateStr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateStr.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateStr.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateStr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateStr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateStr.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateStr.Location = new System.Drawing.Point(6, 28);
+            this.rdbtnCharCreateStr.Name = "rdbtnCharCreateStr";
+            this.rdbtnCharCreateStr.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateStr.TabIndex = 8;
+            this.rdbtnCharCreateStr.TabStop = true;
+            this.rdbtnCharCreateStr.Text = "normal";
+            this.rdbtnCharCreateStr.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateStr.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateStr.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateStr.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreateAss4
+            // rdbtnCharCreateStr4
             // 
-            this.rdbtnCharCreateAss4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreateAss4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreateAss4.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreateAss4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreateAss4.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreateAss4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateAss4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateAss4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreateAss4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreateAss4.Location = new System.Drawing.Point(244, 64);
-            this.rdbtnCharCreateAss4.Name = "rdbtnCharCreateAss4";
-            this.rdbtnCharCreateAss4.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreateAss4.TabIndex = 7;
-            this.rdbtnCharCreateAss4.TabStop = true;
-            this.rdbtnCharCreateAss4.Text = "normal";
-            this.rdbtnCharCreateAss4.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreateAss4.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreateAss4.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreateAss4.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateStr4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateStr4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateStr4.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateStr4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateStr4.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateStr4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateStr4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateStr4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateStr4.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateStr4.Location = new System.Drawing.Point(244, 64);
+            this.rdbtnCharCreateStr4.Name = "rdbtnCharCreateStr4";
+            this.rdbtnCharCreateStr4.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateStr4.TabIndex = 7;
+            this.rdbtnCharCreateStr4.TabStop = true;
+            this.rdbtnCharCreateStr4.Text = "normal";
+            this.rdbtnCharCreateStr4.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateStr4.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateStr4.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateStr4.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreateAss2
+            // rdbtnCharCreateStr2
             // 
-            this.rdbtnCharCreateAss2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreateAss2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreateAss2.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreateAss2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreateAss2.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreateAss2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateAss2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateAss2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreateAss2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreateAss2.Location = new System.Drawing.Point(244, 28);
-            this.rdbtnCharCreateAss2.Name = "rdbtnCharCreateAss2";
-            this.rdbtnCharCreateAss2.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreateAss2.TabIndex = 6;
-            this.rdbtnCharCreateAss2.TabStop = true;
-            this.rdbtnCharCreateAss2.Text = "normal";
-            this.rdbtnCharCreateAss2.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreateAss2.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreateAss2.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreateAss2.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateStr2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateStr2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateStr2.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateStr2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateStr2.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateStr2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateStr2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateStr2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateStr2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateStr2.Location = new System.Drawing.Point(244, 28);
+            this.rdbtnCharCreateStr2.Name = "rdbtnCharCreateStr2";
+            this.rdbtnCharCreateStr2.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateStr2.TabIndex = 6;
+            this.rdbtnCharCreateStr2.TabStop = true;
+            this.rdbtnCharCreateStr2.Text = "normal";
+            this.rdbtnCharCreateStr2.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateStr2.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateStr2.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateStr2.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
             // label1
             // 
@@ -595,106 +597,106 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Strength";
             // 
-            // pnlCharCreateBreasts
+            // Agility
             // 
-            this.pnlCharCreateBreasts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlCharCreateBreasts.Controls.Add(this.rdbtnCharCreateBreasts3);
-            this.pnlCharCreateBreasts.Controls.Add(this.rdbtnCharCreateBreasts1);
-            this.pnlCharCreateBreasts.Controls.Add(this.rdbtnCharCreateBreasts4);
-            this.pnlCharCreateBreasts.Controls.Add(this.rdbtnCharCreateBreasts2);
-            this.pnlCharCreateBreasts.Controls.Add(this.label2);
-            this.pnlCharCreateBreasts.Location = new System.Drawing.Point(3, 112);
-            this.pnlCharCreateBreasts.Name = "pnlCharCreateBreasts";
-            this.pnlCharCreateBreasts.Size = new System.Drawing.Size(470, 103);
-            this.pnlCharCreateBreasts.TabIndex = 18;
+            this.Agility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Agility.Controls.Add(this.rdbtnCharCreateAgi3);
+            this.Agility.Controls.Add(this.rdbtnCharCreateAgi1);
+            this.Agility.Controls.Add(this.rdbtnCharCreateAgi4);
+            this.Agility.Controls.Add(this.rdbtnCharCreateAgi2);
+            this.Agility.Controls.Add(this.label2);
+            this.Agility.Location = new System.Drawing.Point(3, 112);
+            this.Agility.Name = "Agility";
+            this.Agility.Size = new System.Drawing.Size(470, 103);
+            this.Agility.TabIndex = 18;
             // 
-            // rdbtnCharCreateBreasts3
+            // rdbtnCharCreateAgi3
             // 
-            this.rdbtnCharCreateBreasts3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreateBreasts3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreateBreasts3.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreateBreasts3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreateBreasts3.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreateBreasts3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateBreasts3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateBreasts3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreateBreasts3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreateBreasts3.Location = new System.Drawing.Point(6, 64);
-            this.rdbtnCharCreateBreasts3.Name = "rdbtnCharCreateBreasts3";
-            this.rdbtnCharCreateBreasts3.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreateBreasts3.TabIndex = 9;
-            this.rdbtnCharCreateBreasts3.TabStop = true;
-            this.rdbtnCharCreateBreasts3.Text = "normal";
-            this.rdbtnCharCreateBreasts3.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreateBreasts3.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreateBreasts3.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreateBreasts3.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateAgi3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateAgi3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateAgi3.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateAgi3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateAgi3.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateAgi3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateAgi3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateAgi3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateAgi3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateAgi3.Location = new System.Drawing.Point(6, 64);
+            this.rdbtnCharCreateAgi3.Name = "rdbtnCharCreateAgi3";
+            this.rdbtnCharCreateAgi3.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateAgi3.TabIndex = 9;
+            this.rdbtnCharCreateAgi3.TabStop = true;
+            this.rdbtnCharCreateAgi3.Text = "normal";
+            this.rdbtnCharCreateAgi3.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateAgi3.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateAgi3.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateAgi3.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreateBreasts1
+            // rdbtnCharCreateAgi1
             // 
-            this.rdbtnCharCreateBreasts1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreateBreasts1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreateBreasts1.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreateBreasts1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreateBreasts1.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreateBreasts1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateBreasts1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateBreasts1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreateBreasts1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreateBreasts1.Location = new System.Drawing.Point(6, 28);
-            this.rdbtnCharCreateBreasts1.Name = "rdbtnCharCreateBreasts1";
-            this.rdbtnCharCreateBreasts1.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreateBreasts1.TabIndex = 8;
-            this.rdbtnCharCreateBreasts1.TabStop = true;
-            this.rdbtnCharCreateBreasts1.Text = "normal";
-            this.rdbtnCharCreateBreasts1.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreateBreasts1.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreateBreasts1.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreateBreasts1.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateAgi1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateAgi1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateAgi1.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateAgi1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateAgi1.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateAgi1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateAgi1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateAgi1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateAgi1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateAgi1.Location = new System.Drawing.Point(6, 28);
+            this.rdbtnCharCreateAgi1.Name = "rdbtnCharCreateAgi1";
+            this.rdbtnCharCreateAgi1.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateAgi1.TabIndex = 8;
+            this.rdbtnCharCreateAgi1.TabStop = true;
+            this.rdbtnCharCreateAgi1.Text = "normal";
+            this.rdbtnCharCreateAgi1.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateAgi1.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateAgi1.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateAgi1.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreateBreasts4
+            // rdbtnCharCreateAgi4
             // 
-            this.rdbtnCharCreateBreasts4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreateBreasts4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreateBreasts4.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreateBreasts4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreateBreasts4.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreateBreasts4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateBreasts4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateBreasts4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreateBreasts4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreateBreasts4.Location = new System.Drawing.Point(244, 64);
-            this.rdbtnCharCreateBreasts4.Name = "rdbtnCharCreateBreasts4";
-            this.rdbtnCharCreateBreasts4.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreateBreasts4.TabIndex = 7;
-            this.rdbtnCharCreateBreasts4.TabStop = true;
-            this.rdbtnCharCreateBreasts4.Text = "normal";
-            this.rdbtnCharCreateBreasts4.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreateBreasts4.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreateBreasts4.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreateBreasts4.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateAgi4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateAgi4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateAgi4.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateAgi4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateAgi4.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateAgi4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateAgi4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateAgi4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateAgi4.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateAgi4.Location = new System.Drawing.Point(244, 64);
+            this.rdbtnCharCreateAgi4.Name = "rdbtnCharCreateAgi4";
+            this.rdbtnCharCreateAgi4.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateAgi4.TabIndex = 7;
+            this.rdbtnCharCreateAgi4.TabStop = true;
+            this.rdbtnCharCreateAgi4.Text = "normal";
+            this.rdbtnCharCreateAgi4.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateAgi4.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateAgi4.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateAgi4.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreateBreasts2
+            // rdbtnCharCreateAgi2
             // 
-            this.rdbtnCharCreateBreasts2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreateBreasts2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreateBreasts2.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreateBreasts2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreateBreasts2.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreateBreasts2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateBreasts2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreateBreasts2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreateBreasts2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreateBreasts2.Location = new System.Drawing.Point(244, 28);
-            this.rdbtnCharCreateBreasts2.Name = "rdbtnCharCreateBreasts2";
-            this.rdbtnCharCreateBreasts2.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreateBreasts2.TabIndex = 6;
-            this.rdbtnCharCreateBreasts2.TabStop = true;
-            this.rdbtnCharCreateBreasts2.Text = "normal";
-            this.rdbtnCharCreateBreasts2.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreateBreasts2.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreateBreasts2.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreateBreasts2.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateAgi2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateAgi2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateAgi2.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateAgi2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateAgi2.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateAgi2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateAgi2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateAgi2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateAgi2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateAgi2.Location = new System.Drawing.Point(244, 28);
+            this.rdbtnCharCreateAgi2.Name = "rdbtnCharCreateAgi2";
+            this.rdbtnCharCreateAgi2.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateAgi2.TabIndex = 6;
+            this.rdbtnCharCreateAgi2.TabStop = true;
+            this.rdbtnCharCreateAgi2.Text = "normal";
+            this.rdbtnCharCreateAgi2.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateAgi2.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateAgi2.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateAgi2.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
             // label2
             // 
@@ -706,106 +708,106 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Agility";
             // 
-            // pnlCharCreatePenis
+            // Charisma
             // 
-            this.pnlCharCreatePenis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlCharCreatePenis.Controls.Add(this.rdbtnCharCreatePenis3);
-            this.pnlCharCreatePenis.Controls.Add(this.rdbtnCharCreatePenis1);
-            this.pnlCharCreatePenis.Controls.Add(this.rdbtnCharCreatePenis4);
-            this.pnlCharCreatePenis.Controls.Add(this.rdbtnCharCreatePenis2);
-            this.pnlCharCreatePenis.Controls.Add(this.label3);
-            this.pnlCharCreatePenis.Location = new System.Drawing.Point(3, 221);
-            this.pnlCharCreatePenis.Name = "pnlCharCreatePenis";
-            this.pnlCharCreatePenis.Size = new System.Drawing.Size(470, 103);
-            this.pnlCharCreatePenis.TabIndex = 19;
+            this.Charisma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Charisma.Controls.Add(this.rdbtnCharCreateCha3);
+            this.Charisma.Controls.Add(this.rdbtnCharCreateCha1);
+            this.Charisma.Controls.Add(this.rdbtnCharCreateCha4);
+            this.Charisma.Controls.Add(this.rdbtnCharCreateCha2);
+            this.Charisma.Controls.Add(this.label3);
+            this.Charisma.Location = new System.Drawing.Point(3, 221);
+            this.Charisma.Name = "Charisma";
+            this.Charisma.Size = new System.Drawing.Size(470, 103);
+            this.Charisma.TabIndex = 19;
             // 
-            // rdbtnCharCreatePenis3
+            // rdbtnCharCreateCha3
             // 
-            this.rdbtnCharCreatePenis3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreatePenis3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreatePenis3.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreatePenis3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreatePenis3.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreatePenis3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreatePenis3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreatePenis3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreatePenis3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreatePenis3.Location = new System.Drawing.Point(6, 64);
-            this.rdbtnCharCreatePenis3.Name = "rdbtnCharCreatePenis3";
-            this.rdbtnCharCreatePenis3.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreatePenis3.TabIndex = 9;
-            this.rdbtnCharCreatePenis3.TabStop = true;
-            this.rdbtnCharCreatePenis3.Text = "normal";
-            this.rdbtnCharCreatePenis3.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreatePenis3.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreatePenis3.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreatePenis3.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateCha3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateCha3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateCha3.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateCha3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateCha3.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateCha3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateCha3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateCha3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateCha3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateCha3.Location = new System.Drawing.Point(6, 64);
+            this.rdbtnCharCreateCha3.Name = "rdbtnCharCreateCha3";
+            this.rdbtnCharCreateCha3.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateCha3.TabIndex = 9;
+            this.rdbtnCharCreateCha3.TabStop = true;
+            this.rdbtnCharCreateCha3.Text = "normal";
+            this.rdbtnCharCreateCha3.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateCha3.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateCha3.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateCha3.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreatePenis1
+            // rdbtnCharCreateCha1
             // 
-            this.rdbtnCharCreatePenis1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreatePenis1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreatePenis1.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreatePenis1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreatePenis1.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreatePenis1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreatePenis1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreatePenis1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreatePenis1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreatePenis1.Location = new System.Drawing.Point(6, 28);
-            this.rdbtnCharCreatePenis1.Name = "rdbtnCharCreatePenis1";
-            this.rdbtnCharCreatePenis1.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreatePenis1.TabIndex = 8;
-            this.rdbtnCharCreatePenis1.TabStop = true;
-            this.rdbtnCharCreatePenis1.Text = "normal";
-            this.rdbtnCharCreatePenis1.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreatePenis1.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreatePenis1.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreatePenis1.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateCha1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateCha1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateCha1.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateCha1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateCha1.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateCha1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateCha1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateCha1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateCha1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateCha1.Location = new System.Drawing.Point(6, 28);
+            this.rdbtnCharCreateCha1.Name = "rdbtnCharCreateCha1";
+            this.rdbtnCharCreateCha1.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateCha1.TabIndex = 8;
+            this.rdbtnCharCreateCha1.TabStop = true;
+            this.rdbtnCharCreateCha1.Text = "normal";
+            this.rdbtnCharCreateCha1.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateCha1.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateCha1.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateCha1.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreatePenis4
+            // rdbtnCharCreateCha4
             // 
-            this.rdbtnCharCreatePenis4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreatePenis4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreatePenis4.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreatePenis4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreatePenis4.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreatePenis4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreatePenis4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreatePenis4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreatePenis4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreatePenis4.Location = new System.Drawing.Point(244, 64);
-            this.rdbtnCharCreatePenis4.Name = "rdbtnCharCreatePenis4";
-            this.rdbtnCharCreatePenis4.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreatePenis4.TabIndex = 7;
-            this.rdbtnCharCreatePenis4.TabStop = true;
-            this.rdbtnCharCreatePenis4.Text = "normal";
-            this.rdbtnCharCreatePenis4.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreatePenis4.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreatePenis4.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreatePenis4.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateCha4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateCha4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateCha4.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateCha4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateCha4.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateCha4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateCha4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateCha4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateCha4.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateCha4.Location = new System.Drawing.Point(244, 64);
+            this.rdbtnCharCreateCha4.Name = "rdbtnCharCreateCha4";
+            this.rdbtnCharCreateCha4.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateCha4.TabIndex = 7;
+            this.rdbtnCharCreateCha4.TabStop = true;
+            this.rdbtnCharCreateCha4.Text = "normal";
+            this.rdbtnCharCreateCha4.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateCha4.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateCha4.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateCha4.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
-            // rdbtnCharCreatePenis2
+            // rdbtnCharCreateCha2
             // 
-            this.rdbtnCharCreatePenis2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtnCharCreatePenis2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbtnCharCreatePenis2.BackColor = System.Drawing.Color.Transparent;
-            this.rdbtnCharCreatePenis2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rdbtnCharCreatePenis2.FlatAppearance.BorderSize = 0;
-            this.rdbtnCharCreatePenis2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreatePenis2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.rdbtnCharCreatePenis2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbtnCharCreatePenis2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rdbtnCharCreatePenis2.Location = new System.Drawing.Point(244, 28);
-            this.rdbtnCharCreatePenis2.Name = "rdbtnCharCreatePenis2";
-            this.rdbtnCharCreatePenis2.Size = new System.Drawing.Size(220, 30);
-            this.rdbtnCharCreatePenis2.TabIndex = 6;
-            this.rdbtnCharCreatePenis2.TabStop = true;
-            this.rdbtnCharCreatePenis2.Text = "normal";
-            this.rdbtnCharCreatePenis2.UseVisualStyleBackColor = false;
-            this.rdbtnCharCreatePenis2.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
-            this.rdbtnCharCreatePenis2.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
-            this.rdbtnCharCreatePenis2.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
+            this.rdbtnCharCreateCha2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbtnCharCreateCha2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtnCharCreateCha2.BackColor = System.Drawing.Color.Transparent;
+            this.rdbtnCharCreateCha2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rdbtnCharCreateCha2.FlatAppearance.BorderSize = 0;
+            this.rdbtnCharCreateCha2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateCha2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.rdbtnCharCreateCha2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbtnCharCreateCha2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rdbtnCharCreateCha2.Location = new System.Drawing.Point(244, 28);
+            this.rdbtnCharCreateCha2.Name = "rdbtnCharCreateCha2";
+            this.rdbtnCharCreateCha2.Size = new System.Drawing.Size(220, 30);
+            this.rdbtnCharCreateCha2.TabIndex = 6;
+            this.rdbtnCharCreateCha2.TabStop = true;
+            this.rdbtnCharCreateCha2.Text = "normal";
+            this.rdbtnCharCreateCha2.UseVisualStyleBackColor = false;
+            this.rdbtnCharCreateCha2.CheckedChanged += new System.EventHandler(this.BtnWideSelected);
+            this.rdbtnCharCreateCha2.MouseEnter += new System.EventHandler(this.btnWide_MouseEnter);
+            this.rdbtnCharCreateCha2.MouseLeave += new System.EventHandler(this.btnWide_MouseLeave);
             // 
             // label3
             // 
@@ -964,14 +966,16 @@
             // 
             // pnlEventViewEventButtons
             // 
+            this.pnlEventViewEventButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlEventViewEventButtons.Location = new System.Drawing.Point(13, 60);
             this.pnlEventViewEventButtons.Name = "pnlEventViewEventButtons";
-            this.pnlEventViewEventButtons.Size = new System.Drawing.Size(200, 563);
+            this.pnlEventViewEventButtons.Size = new System.Drawing.Size(200, 432);
             this.pnlEventViewEventButtons.TabIndex = 30;
             // 
             // pnlEventViewTextLarge
             // 
             this.pnlEventViewTextLarge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlEventViewTextLarge.Controls.Add(this.lblEventViewLargeText);
             this.pnlEventViewTextLarge.Controls.Add(this.btnEventViewHideLarge);
             this.pnlEventViewTextLarge.Location = new System.Drawing.Point(217, 60);
             this.pnlEventViewTextLarge.Name = "pnlEventViewTextLarge";
@@ -996,6 +1000,7 @@
             // pnlEventViewTextSmall
             // 
             this.pnlEventViewTextSmall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlEventViewTextSmall.Controls.Add(this.lblEventViewSmallText);
             this.pnlEventViewTextSmall.Controls.Add(this.btnEventViewHideSmall);
             this.pnlEventViewTextSmall.Location = new System.Drawing.Point(5, 498);
             this.pnlEventViewTextSmall.Name = "pnlEventViewTextSmall";
@@ -1027,6 +1032,24 @@
             this.picbxEventViewClock.TabStop = false;
             this.picbxEventViewClock.Visible = false;
             // 
+            // lblEventViewLargeText
+            // 
+            this.lblEventViewLargeText.AutoSize = true;
+            this.lblEventViewLargeText.Location = new System.Drawing.Point(4, 8);
+            this.lblEventViewLargeText.Name = "lblEventViewLargeText";
+            this.lblEventViewLargeText.Size = new System.Drawing.Size(44, 26);
+            this.lblEventViewLargeText.TabIndex = 29;
+            this.lblEventViewLargeText.Text = "Default \r\nText";
+            // 
+            // lblEventViewSmallText
+            // 
+            this.lblEventViewSmallText.AutoSize = true;
+            this.lblEventViewSmallText.Location = new System.Drawing.Point(5, 9);
+            this.lblEventViewSmallText.Name = "lblEventViewSmallText";
+            this.lblEventViewSmallText.Size = new System.Drawing.Size(44, 26);
+            this.lblEventViewSmallText.TabIndex = 30;
+            this.lblEventViewSmallText.Text = "Default \r\nText";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1054,18 +1077,20 @@
             this.pnlCharCreate.ResumeLayout(false);
             this.pnlCharCreate.PerformLayout();
             this.FLPnlCharCreate.ResumeLayout(false);
-            this.pnlCharCreateAss.ResumeLayout(false);
-            this.pnlCharCreateAss.PerformLayout();
-            this.pnlCharCreateBreasts.ResumeLayout(false);
-            this.pnlCharCreateBreasts.PerformLayout();
-            this.pnlCharCreatePenis.ResumeLayout(false);
-            this.pnlCharCreatePenis.PerformLayout();
+            this.Strength.ResumeLayout(false);
+            this.Strength.PerformLayout();
+            this.Agility.ResumeLayout(false);
+            this.Agility.PerformLayout();
+            this.Charisma.ResumeLayout(false);
+            this.Charisma.PerformLayout();
             this.pnlCharViewFull.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picbxCharViewFull)).EndInit();
             this.pnlEventView.ResumeLayout(false);
             this.pnlEventViewEvent.ResumeLayout(false);
             this.pnlEventViewTextLarge.ResumeLayout(false);
+            this.pnlEventViewTextLarge.PerformLayout();
             this.pnlEventViewTextSmall.ResumeLayout(false);
+            this.pnlEventViewTextSmall.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbxEventViewClock)).EndInit();
             this.ResumeLayout(false);
 
@@ -1091,27 +1116,27 @@
         private System.Windows.Forms.Button btnTopsave;
         private System.Windows.Forms.Button btnTopoptions;
         private System.Windows.Forms.Button btnCharCreateFinish;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbxCharCreateCharName;
         private System.Windows.Forms.Panel pnlCharViewFull;
         private System.Windows.Forms.Panel pnlCharViewText;
         private System.Windows.Forms.FlowLayoutPanel FLPnlCharCreate;
-        private System.Windows.Forms.Panel pnlCharCreateAss;
-        private System.Windows.Forms.RadioButton rdbtnCharCreateAss3;
-        private System.Windows.Forms.RadioButton rdbtnCharCreateAss1;
-        private System.Windows.Forms.RadioButton rdbtnCharCreateAss4;
-        private System.Windows.Forms.RadioButton rdbtnCharCreateAss2;
+        private System.Windows.Forms.Panel Strength;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateStr3;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateStr;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateStr4;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateStr2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlCharCreateBreasts;
-        private System.Windows.Forms.RadioButton rdbtnCharCreateBreasts3;
-        private System.Windows.Forms.RadioButton rdbtnCharCreateBreasts1;
-        private System.Windows.Forms.RadioButton rdbtnCharCreateBreasts4;
-        private System.Windows.Forms.RadioButton rdbtnCharCreateBreasts2;
+        private System.Windows.Forms.Panel Agility;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateAgi3;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateAgi1;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateAgi4;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateAgi2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pnlCharCreatePenis;
-        private System.Windows.Forms.RadioButton rdbtnCharCreatePenis3;
-        private System.Windows.Forms.RadioButton rdbtnCharCreatePenis1;
-        private System.Windows.Forms.RadioButton rdbtnCharCreatePenis4;
-        private System.Windows.Forms.RadioButton rdbtnCharCreatePenis2;
+        private System.Windows.Forms.Panel Charisma;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateCha3;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateCha1;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateCha4;
+        private System.Windows.Forms.RadioButton rdbtnCharCreateCha2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox picbxCharViewFull;
         private System.Windows.Forms.Panel pnlEventView;
@@ -1131,6 +1156,8 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel pnlEventViewEventButtons;
+        private System.Windows.Forms.Label lblEventViewLargeText;
+        private System.Windows.Forms.Label lblEventViewSmallText;
     }
 }
 

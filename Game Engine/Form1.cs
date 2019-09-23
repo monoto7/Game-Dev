@@ -164,18 +164,18 @@ namespace Game_Engine_Player
             Panel Curpanel = sender as Panel;
             Curpanel.BackgroundImage = BackgroundGeneral;
             //panelchange(Curpanel.Controls);
-            rdbtnCharCreateAss1.BackgroundImage = ButtonWide;
-            rdbtnCharCreateAss2.BackgroundImage = ButtonWide;
-            rdbtnCharCreateAss3.BackgroundImage = ButtonWide;
-            rdbtnCharCreateAss4.BackgroundImage = ButtonWide;
-            rdbtnCharCreateBreasts1.BackgroundImage = ButtonWide;
-            rdbtnCharCreateBreasts2.BackgroundImage = ButtonWide;
-            rdbtnCharCreateBreasts3.BackgroundImage = ButtonWide;
-            rdbtnCharCreateBreasts4.BackgroundImage = ButtonWide;
-            rdbtnCharCreatePenis1.BackgroundImage = ButtonWide;
-            rdbtnCharCreatePenis2.BackgroundImage = ButtonWide;
-            rdbtnCharCreatePenis3.BackgroundImage = ButtonWide;
-            rdbtnCharCreatePenis4.BackgroundImage = ButtonWide;
+            rdbtnCharCreateStr.BackgroundImage = ButtonWide;
+            rdbtnCharCreateStr2.BackgroundImage = ButtonWide;
+            rdbtnCharCreateStr3.BackgroundImage = ButtonWide;
+            rdbtnCharCreateStr4.BackgroundImage = ButtonWide;
+            rdbtnCharCreateAgi1.BackgroundImage = ButtonWide;
+            rdbtnCharCreateAgi2.BackgroundImage = ButtonWide;
+            rdbtnCharCreateAgi3.BackgroundImage = ButtonWide;
+            rdbtnCharCreateAgi4.BackgroundImage = ButtonWide;
+            rdbtnCharCreateCha1.BackgroundImage = ButtonWide;
+            rdbtnCharCreateCha2.BackgroundImage = ButtonWide;
+            rdbtnCharCreateCha3.BackgroundImage = ButtonWide;
+            rdbtnCharCreateCha4.BackgroundImage = ButtonWide;
             btnCharCreateFinish.BackgroundImage = ButtonFourBy;
 
 
@@ -279,11 +279,12 @@ namespace Game_Engine_Player
             btnEventViewInventory.BackgroundImage = new Bitmap(@"Images\UI\elements\char frame.png");
             pnlEventViewTextLarge.BackgroundImage = new Bitmap(@"Images\UI\elements\textbox trans_big.png");
             pnlEventViewTextSmall.BackgroundImage = new Bitmap(@"Images\UI\elements\textbox trans_small.png");
+            pnlEventViewEventButtons.BackgroundImage = new Bitmap(@"Images\UI\elements\char frame.png");
         }
 
         private void btnCharCreateFinish_Click(object sender, EventArgs e)
         {
-            MainChar = new Character("Peter");
+            MainChar = new Character(txtbxCharCreateCharName.Text);
             pnlEventView.Visible = true;
             pnlCharCreate.Visible = false;
             pnlCharViewFull.Visible = false;
@@ -338,6 +339,8 @@ namespace Game_Engine_Player
             //The button name is used to remember which ECH it is, though this might be inelegant.
             EventConvoHandler ECHPress = EventConvo[button.Name];
             KeyValuePair<int, string> SendTextState = ECHPress.Activate(MainChar);
+            lblEventViewLargeText.Text = SendTextState.Value;
+            lblEventViewSmallText.Text = SendTextState.Value;
             EventRefresh(SendTextState.Key);
         }
 
@@ -385,9 +388,9 @@ namespace Game_Engine_Player
             EventConvo.Clear();
             pnlEventViewEventButtons.Controls.Clear();
             int ButtonCount = 0;
-            int panelheight = pnlEventViewEventButtons.Size.Height;
-            int width = Convert.ToInt32(pnlEventViewEventButtons.Size.Width * 0.8);
-            int placementX = Convert.ToInt32(pnlEventViewEventButtons.Size.Width - (pnlEventViewEventButtons.Size.Width * 0.9));
+            int panelheight = Convert.ToInt32(pnlEventViewEventButtons.Size.Height * 0.95);
+            int width = Convert.ToInt32(pnlEventViewEventButtons.Size.Width * 0.9);
+            int placementX = Convert.ToInt32(pnlEventViewEventButtons.Size.Width - (pnlEventViewEventButtons.Size.Width * 0.95));
             KeyValuePair<string, string> AcceptStateCheck = CurrentEvent.StateCheck(SendState, ref MainChar);
             if (AcceptStateCheck.Key == null)
             {
@@ -408,10 +411,13 @@ namespace Game_Engine_Player
                         Text = CurECH.ButtonText,
                         Size = new Size(width, height),
                         Location = new Point(placementX, height * ButtonCount)
-
                     };
                     CurButton.FlatStyle = FlatStyle.Flat;
+                    CurButton.BackgroundImage = ButtonGeneral;
+                    CurButton.BackgroundImageLayout = ImageLayout.Stretch;
                     CurButton.Click += new System.EventHandler(EventButtonClick);
+                    CurButton.MouseEnter += new System.EventHandler(btnGeneral_MouseEnter);
+                    CurButton.MouseLeave += new System.EventHandler(btnGeneral_MouseLeave);
                     ButtonCount++;
                     pnlEventViewEventButtons.Controls.Add(CurButton);
                 }
