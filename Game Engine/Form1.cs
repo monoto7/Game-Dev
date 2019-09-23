@@ -338,8 +338,6 @@ namespace Game_Engine_Player
             //The button name is used to remember which ECH it is, though this might be inelegant.
             EventConvoHandler ECHPress = EventConvo[button.Name];
             KeyValuePair<int, string> SendTextState = ECHPress.Activate(MainChar);
-            //Clears the 'event convo', Event convo only stores the currently displayed buttons/ECHs.
-            EventConvo.Clear();
             EventRefresh(SendTextState.Key);
         }
 
@@ -382,8 +380,10 @@ namespace Game_Engine_Player
         {
             //Event Refresh is probably the most interesting part of this file, as it handles dynamic button creation with eventhandlers.
             //To Quickly summarise, it creates the buttons based on the ECH's with Accept States equal to the current Send State and then displays them on the screen.
-         
+            
+            //Below clears the 'event convo', Event convo only stores the currently displayed buttons/ECHs.
             EventConvo.Clear();
+            pnlEventViewEventButtons.Controls.Clear();
             int ButtonCount = 0;
             int panelheight = pnlEventViewEventButtons.Size.Height;
             int width = Convert.ToInt32(pnlEventViewEventButtons.Size.Width * 0.8);
