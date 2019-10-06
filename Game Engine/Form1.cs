@@ -25,30 +25,36 @@ namespace Game_Engine_Player
         Bitmap BackgroundGeneral;
         Bitmap ButtonGeneral;
         Bitmap ButtonGeneralHover;
-        Bitmap ButtonFourBy;
-        Bitmap ButtonFourByHover; 
+        Bitmap Button4x1;
+        Bitmap Button4x1Hover;
+        Bitmap Button2x3;
+        Bitmap Button2x3Hover;
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        
         private void Form1_Load(object sender, EventArgs e)
         {
+
             Data = new Datapull();
             //loads the main menu and the button images used throughout the software into the memory. Those images are not applied in the form editor to allow for them to be changed.
             //Ideally there would be the ability to create buttons, and while an implementation would be possible, it's not a priority.
-            ButtonFourBy = new Bitmap(@"Images\UI\elements\button 4x1.png");
-            ButtonFourByHover = new Bitmap(@"Images\UI\elements\button 4x1_ho.png");
-            ButtonGeneral = new Bitmap(@"Images\UI\elements\button.png");
-            ButtonGeneralHover = new Bitmap(@"Images\UI\elements\button_ho.png");
+            Button4x1 = new Bitmap(@"Images\UI\elements\button 4x1.png");
+            Button4x1Hover = new Bitmap(@"Images\UI\elements\button 4x1_ho.png");
+            Button2x3 = new Bitmap(@"Images\UI\elements\button 2x3.png");
+            Button2x3Hover = new Bitmap(@"Images\UI\elements\button 2x3_ho.png");
+            ButtonGeneral = new Bitmap(@"Images\UI\elements\button 3x3.png");
+            ButtonGeneralHover = new Bitmap(@"Images\UI\elements\button 3x3_ho.png");
             BackgroundGeneral = new Bitmap(@"Images\UI\elements\background patternResize.png");
             pnlMainMenu.BackgroundImage = new Bitmap(@"Images\UI\main menu bg.png");
             ButtonWide = new Bitmap(@"Images\UI\elements\button wide.png");
             ButtonWideHover = new Bitmap(@"Images\UI\elements\button wide_ho.png");
-            btnMainMenuOptions.BackgroundImage = ButtonFourBy;
-            btnMainMenuStartGame.BackgroundImage = ButtonFourBy;
-            btnMainMenuLoadGame.BackgroundImage = ButtonFourBy;
+            btnMainMenuOptions.BackgroundImage = Button4x1;
+            btnMainMenuStartGame.BackgroundImage = Button4x1;
+            btnMainMenuLoadGame.BackgroundImage = Button4x1;
             EventConvo = new Dictionary<string, EventConvoHandler>();
         }
 
@@ -119,15 +125,25 @@ namespace Game_Engine_Player
             }
             
         }
-        private void btnFourBy_MouseEnter(object sender, EventArgs e)
+        private void btn4x1_MouseEnter(object sender, EventArgs e)
         {
             Control CurButton = sender as Control;
-            CurButton.BackgroundImage = ButtonFourByHover;
+            CurButton.BackgroundImage = Button4x1Hover;
         }
-        private void btnFourBy_MouseLeave(object sender, EventArgs e)
+        private void btn4x1_MouseLeave(object sender, EventArgs e)
         {
             Control CurButton = sender as Control;
-            CurButton.BackgroundImage = ButtonFourBy;
+            CurButton.BackgroundImage = Button4x1;
+        }
+        private void btn2x3_MouseEnter(object sender, EventArgs e)
+        {
+            Control CurButton = sender as Control;
+            CurButton.BackgroundImage = Button2x3Hover;
+        }
+        private void btn2x3_MouseLeave(object sender, EventArgs e)
+        {
+            Control CurButton = sender as Control;
+            CurButton.BackgroundImage = Button2x3;
         }
 
 
@@ -176,7 +192,7 @@ namespace Game_Engine_Player
             rdbtnCharCreateCha2.BackgroundImage = ButtonWide;
             rdbtnCharCreateCha3.BackgroundImage = ButtonWide;
             rdbtnCharCreateCha4.BackgroundImage = ButtonWide;
-            btnCharCreateFinish.BackgroundImage = ButtonFourBy;
+            btnCharCreateFinish.BackgroundImage = Button4x1;
 
 
         }
@@ -403,6 +419,8 @@ namespace Game_Engine_Player
                     }
                 }
                 int height = (panelheight) / EventConvo.Count();
+                
+                
                 foreach (EventConvoHandler CurECH in EventConvo.Values)
                 {
                     Button CurButton = new Button
@@ -412,12 +430,30 @@ namespace Game_Engine_Player
                         Size = new Size(width, height),
                         Location = new Point(placementX, height * ButtonCount)
                     };
+                    CurButton.FlatAppearance.BorderSize = 0;
                     CurButton.FlatStyle = FlatStyle.Flat;
-                    CurButton.BackgroundImage = ButtonGeneral;
+                    CurButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(45,170,225);
                     CurButton.BackgroundImageLayout = ImageLayout.Stretch;
                     CurButton.Click += new System.EventHandler(EventButtonClick);
-                    CurButton.MouseEnter += new System.EventHandler(btnGeneral_MouseEnter);
-                    CurButton.MouseLeave += new System.EventHandler(btnGeneral_MouseLeave);
+                    if (EventConvo.Count() == 1)
+                    {
+                        CurButton.BackgroundImage = Button2x3;
+                        CurButton.MouseEnter += new System.EventHandler(btn2x3_MouseEnter);
+                        CurButton.MouseLeave += new System.EventHandler(btn2x3_MouseLeave);
+                    }
+                    else if (EventConvo.Count() == 2)
+                    {
+                        CurButton.BackgroundImage = ButtonGeneral;
+                        CurButton.MouseEnter += new System.EventHandler(btnGeneral_MouseEnter);
+                        CurButton.MouseLeave += new System.EventHandler(btnGeneral_MouseLeave);
+                    }
+                    else
+                    {
+                        CurButton.BackgroundImage = Button4x1;
+                        CurButton.MouseEnter += new System.EventHandler(btn4x1_MouseEnter);
+                        CurButton.MouseLeave += new System.EventHandler(btn4x1_MouseLeave);
+                    }
+                    
                     ButtonCount++;
                     pnlEventViewEventButtons.Controls.Add(CurButton);
                 }
@@ -430,6 +466,26 @@ namespace Game_Engine_Player
             {
                 //code here will show a map. In the future this code will not be manual but instead pull from a list of included 'modules' that would include both the map and events.
                 //By doing this it would allow for other modules to be supported after event selection. For example the suggested idea of minigames.
+            }
+        }
+
+        private void pnlEventViewTextLarge_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            pnlEventViewTextLarge.Visible = false;
+            pnlEventViewTextSmall.Visible = true;
+        }
+
+        private void pnlEventViewTextSmall_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            pnlEventViewTextLarge.Visible = true;
+            pnlEventViewTextSmall.Visible = false;
+        }
+        class BufferedPanel : Panel
+        {
+            public BufferedPanel()
+            {
+                this.DoubleBuffered = true;
+                this.ResizeRedraw = true;
             }
         }
 
