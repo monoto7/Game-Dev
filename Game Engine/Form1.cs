@@ -344,7 +344,8 @@ namespace Game_Engine_Player
         {
             //This gets the start state for the next event to be run
             KeyValuePair<int, string> StartState = CurEvent.GetStartState(MainChar);
-            // rtxbxEvent.Text = StartState.Value;
+            lblEventViewLargeText.Text = StartState.Value;
+            lblEventViewSmallText.Text = StartState.Value;
             CurrentEvent = CurEvent;
             EventRefresh(StartState.Key);
         }
@@ -403,6 +404,7 @@ namespace Game_Engine_Player
             //Below clears the 'event convo', Event convo only stores the currently displayed buttons/ECHs.
             EventConvo.Clear();
             pnlEventViewEventButtons.Controls.Clear();
+            
             int ButtonCount = 0;
             int panelheight = Convert.ToInt32(pnlEventViewEventButtons.Size.Height * 0.95);
             int width = Convert.ToInt32(pnlEventViewEventButtons.Size.Width * 0.9);
@@ -460,7 +462,7 @@ namespace Game_Engine_Player
             }
             else if (AcceptStateCheck.Key == "Event")
             {
-                EventStart(Data.GetEvent(AcceptStateCheck.Key));
+                EventStart(Data.GetEvent(AcceptStateCheck.Value));
             }
             else if (AcceptStateCheck.Key == "Map")
             {
@@ -473,12 +475,15 @@ namespace Game_Engine_Player
         {
             pnlEventViewTextLarge.Visible = false;
             pnlEventViewTextSmall.Visible = true;
+            lblEventViewSmallText.MaximumSize = new Size(Convert.ToInt32(pnlEventViewTextSmall.Width * 0.84), pnlEventViewTextSmall.Height - 10);
+
         }
 
         private void pnlEventViewTextSmall_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             pnlEventViewTextLarge.Visible = true;
             pnlEventViewTextSmall.Visible = false;
+            lblEventViewLargeText.MaximumSize = new Size(pnlEventViewTextLarge.Width - 10, pnlEventViewTextLarge.Height - 10);
         }
         class BufferedPanel : Panel
         {

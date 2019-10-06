@@ -31,15 +31,15 @@
             this.btnMainMenuLoadGame = new System.Windows.Forms.Button();
             this.btnMainMenuOptions = new System.Windows.Forms.Button();
             this.btnMainMenuStartGame = new System.Windows.Forms.Button();
-            this.pnlMainMenu = new BufferedPanel();
-            this.pnlOptions = new BufferedPanel();
-            this.pnlLoad = new BufferedPanel();
-            this.pnlInventory = new BufferedPanel();
-            this.panel7 = new BufferedPanel();
+            this.pnlMainMenu = new Game_Engine_Player.MainWindow.BufferedPanel();
+            this.pnlOptions = new Game_Engine_Player.MainWindow.BufferedPanel();
+            this.pnlLoad = new Game_Engine_Player.MainWindow.BufferedPanel();
+            this.pnlInventory = new Game_Engine_Player.MainWindow.BufferedPanel();
+            this.panel7 = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.panel6 = new BufferedPanel();
+            this.panel6 = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -47,44 +47,44 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.pnlInventoryViewInventory = new BufferedPanel();
-            this.pnlCharCreate = new BufferedPanel();
+            this.pnlInventoryViewInventory = new Game_Engine_Player.MainWindow.BufferedPanel();
+            this.pnlCharCreate = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.btnCharCreateFinish = new System.Windows.Forms.Button();
             this.txtbxCharCreateCharName = new System.Windows.Forms.TextBox();
             this.FLPnlCharCreate = new System.Windows.Forms.FlowLayoutPanel();
-            this.Strength = new BufferedPanel();
+            this.Strength = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.rdbtnCharCreateStr3 = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateStr = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateStr4 = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateStr2 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.Agility = new BufferedPanel();
+            this.Agility = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.rdbtnCharCreateAgi3 = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateAgi1 = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateAgi4 = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateAgi2 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.Charisma = new BufferedPanel();
+            this.Charisma = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.rdbtnCharCreateCha3 = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateCha1 = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateCha4 = new System.Windows.Forms.RadioButton();
             this.rdbtnCharCreateCha2 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.pnlCharViewFull = new BufferedPanel();
+            this.pnlCharViewFull = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.picbxCharViewFull = new System.Windows.Forms.PictureBox();
-            this.pnlCharViewText = new BufferedPanel();
+            this.pnlCharViewText = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.btnTopclose = new System.Windows.Forms.Button();
             this.btnTopminimise = new System.Windows.Forms.Button();
             this.btnTopsave = new System.Windows.Forms.Button();
             this.btnTopoptions = new System.Windows.Forms.Button();
-            this.pnlEventView = new BufferedPanel();
+            this.pnlEventView = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.btnEventViewInventory = new System.Windows.Forms.Button();
-            this.pnlEventViewEvent = new BufferedPanel();
-            this.pnlEventViewEventButtons = new BufferedPanel();
-            this.pnlEventViewTextLarge = new BufferedPanel();
+            this.pnlEventViewEvent = new Game_Engine_Player.MainWindow.BufferedPanel();
+            this.pnlEventViewEventButtons = new Game_Engine_Player.MainWindow.BufferedPanel();
+            this.pnlEventViewTextLarge = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.lblEventViewLargeText = new System.Windows.Forms.Label();
             this.btnEventViewHideLarge = new System.Windows.Forms.Button();
-            this.pnlEventViewTextSmall = new BufferedPanel();
+            this.pnlEventViewTextSmall = new Game_Engine_Player.MainWindow.BufferedPanel();
             this.lblEventViewSmallText = new System.Windows.Forms.Label();
             this.btnEventViewHideSmall = new System.Windows.Forms.Button();
             this.picbxEventViewClock = new System.Windows.Forms.PictureBox();
@@ -977,6 +977,7 @@
             this.pnlEventViewTextLarge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlEventViewTextLarge.Controls.Add(this.lblEventViewLargeText);
             this.pnlEventViewTextLarge.Controls.Add(this.btnEventViewHideLarge);
+            this.pnlEventViewTextLarge.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlEventViewTextLarge.Location = new System.Drawing.Point(217, 60);
             this.pnlEventViewTextLarge.Name = "pnlEventViewTextLarge";
             this.pnlEventViewTextLarge.Size = new System.Drawing.Size(678, 563);
@@ -987,11 +988,14 @@
             // lblEventViewLargeText
             // 
             this.lblEventViewLargeText.AutoSize = true;
-            this.lblEventViewLargeText.Location = new System.Drawing.Point(4, 8);
+            this.lblEventViewLargeText.Location = new System.Drawing.Point(5, 5);
+            this.lblEventViewLargeText.MaximumSize = new System.Drawing.Size(100, 100);
             this.lblEventViewLargeText.Name = "lblEventViewLargeText";
-            this.lblEventViewLargeText.Size = new System.Drawing.Size(44, 26);
+            this.lblEventViewLargeText.Size = new System.Drawing.Size(93, 100);
             this.lblEventViewLargeText.TabIndex = 29;
-            this.lblEventViewLargeText.Text = "Default \r\nText";
+            this.lblEventViewLargeText.Text = "Defaulteeeeeeeeeeeeeeeeeeee eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" +
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" +
+    "\r\nText";
             // 
             // btnEventViewHideLarge
             // 
@@ -1012,6 +1016,7 @@
             this.pnlEventViewTextSmall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlEventViewTextSmall.Controls.Add(this.lblEventViewSmallText);
             this.pnlEventViewTextSmall.Controls.Add(this.btnEventViewHideSmall);
+            this.pnlEventViewTextSmall.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlEventViewTextSmall.Location = new System.Drawing.Point(10, 498);
             this.pnlEventViewTextSmall.Name = "pnlEventViewTextSmall";
             this.pnlEventViewTextSmall.Size = new System.Drawing.Size(885, 125);
@@ -1021,9 +1026,10 @@
             // lblEventViewSmallText
             // 
             this.lblEventViewSmallText.AutoSize = true;
-            this.lblEventViewSmallText.Location = new System.Drawing.Point(5, 9);
+            this.lblEventViewSmallText.BackColor = System.Drawing.Color.Transparent;
+            this.lblEventViewSmallText.Location = new System.Drawing.Point(5, 5);
             this.lblEventViewSmallText.Name = "lblEventViewSmallText";
-            this.lblEventViewSmallText.Size = new System.Drawing.Size(44, 26);
+            this.lblEventViewSmallText.Size = new System.Drawing.Size(110, 74);
             this.lblEventViewSmallText.TabIndex = 30;
             this.lblEventViewSmallText.Text = "Default \r\nText";
             // 
